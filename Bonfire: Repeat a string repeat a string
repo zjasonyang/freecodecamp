@@ -1,0 +1,20 @@
+function repeat(str, num) {
+  // repeat after me
+  var result="";
+
+  //if num<0 return empty string
+  if(num<0){
+    return result="";
+  }
+  //use javascript concat
+  else {
+    for( var i=0 ; i<num; i++ ){
+      console.log(i);
+      result = result.concat(str);
+    }
+  }
+  
+  return result;
+}
+
+repeat("abc", 3, "");
