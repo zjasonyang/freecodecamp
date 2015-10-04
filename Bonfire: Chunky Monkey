@@ -1,0 +1,27 @@
+function chunk(arr, size) {
+  // Break it up.
+  var result=[];
+  var tmp = [];
+  var j=0;
+//  console.log(arr.length);
+//  console.log(Math.ceil(arr.length/size));
+  
+  for(var i=0 ; i< Math.ceil(arr.length/size); i++){
+    for(var j=0 ; j< size ; j++){
+      if(arr[j+i*size] != null){ //判斷不能是空的內容
+        tmp.push(arr[j+i*size]);
+      }
+    }
+
+    result[i] = tmp;  //把值塞回新 result 
+    tmp = []; //清空暫存的tmp[]
+    
+  }
+  
+//  console.log(result);
+  
+  
+  return result;
+}
+
+chunk(["0", "1", "2", "3" , "4" , "5"], 4, "");
