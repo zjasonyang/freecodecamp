@@ -1,0 +1,15 @@
+function end(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  var subLength = target.length;
+  //console.log(subLength);  要減掉的長度
+  //console.log(str.substr(0-subLength));
+  if(str.substr(0-subLength) === target){
+    return true;
+  }
+  else return false;
+}
+
+end("He has to give me a new name", "name");
+end("Connor", "n", "");
+end("Walking on water and developing software from a specification are easy if both are frozen.", "specification");
