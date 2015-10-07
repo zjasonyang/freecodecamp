@@ -1,0 +1,31 @@
+function sumAll(arr) {
+  
+  //透過sort 把最大數弄到最前面
+  arr.sort(function(a,b){return a-b;});
+  console.log(arr);
+    
+  // result 為加總結果, 先弄個空陣列,把a,b 間的值補滿
+  var result = [];
+  
+  for(var i=arr[0]; i<arr[1]-1;i++){  //調整for 的i值限制符合描述
+    arr.push(i+1);
+    console.log(arr);
+  }
+  
+  /*標準 reduce callback function 內容 , 利用來加總
+  
+   */
+  
+  
+  function jsReduce(previousValue,currentValue,index,array){
+    return previousValue + currentValue;
+  }
+  
+  result = arr.reduce(jsReduce);
+  console.log(result);
+  
+  return result;
+ 
+}
+
+sumAll([4, 1]);
