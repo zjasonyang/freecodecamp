@@ -1,0 +1,25 @@
+function destroyer(arr) {
+  // Remove all the values
+  var args=[];
+  for(var i=1;i<arguments.length;i++){
+    args.push(arguments[i]);
+  }
+  function falsyRemover(value,index,array){
+    return Boolean(value);
+  }
+  //清理args 這個要拿來比對的array
+  args = args.filter(falsyRemover);
+  
+  /*不存在的value, indexOf 傳回 -1
+   *前面把參數存成args array
+   *反過來查arr 所有的值 不存在 args 的即得 移除重複值
+   */
+  function argsRemover(value,index,array){
+    return args.indexOf(value)===-1;
+  }
+  
+  var result = arr.filter(argsRemover);
+  return result;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3, "");
