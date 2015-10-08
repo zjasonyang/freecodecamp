@@ -1,0 +1,22 @@
+function diff(arr1, arr2) {
+  var newArr = [];
+  
+  /*利用indexOf 兩個互相各跑一次, 分別得出兩個陣列
+    再利用concat() 把兩個串起來
+  */
+  function check1(value,index,array){
+    return arr2.indexOf(value) == -1;
+  }
+  function check2(value,index,array){
+    return arr1.indexOf(value) == -1;
+  }
+      
+  newArr = arr1.filter(check1).concat(arr2.filter(check2));
+  
+  return newArr;
+     
+  // Same, same; but different.
+  
+}
+
+diff(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
